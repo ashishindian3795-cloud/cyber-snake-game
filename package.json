@@ -1,0 +1,19 @@
+{
+  "name": "cyber-snake-neon-arcade",
+  "version": "1.0.0",
+  "description": "High-octane Cyberpunk Neon Snake Game built with Canvas & Web Audio API",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "snake",
+    "arcade",
+    "cyberpunk",
+    "neon",
+    "canvas",
+    "web-audio-api"
+  ],
+  "author": "Coder",
+  "license": "MIT"
+}

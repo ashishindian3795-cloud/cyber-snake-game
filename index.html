@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CYBER SNAKE // Neon Arcade</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="stars-bg"></div>
+  <div class="grid-floor"></div>
+
+  <div class="arcade-cabinet">
+    <!-- Header / Title -->
+    <header class="game-header">
+      <h1 class="neon-title" data-text="CYBER SNAKE">CYBER SNAKE</h1>
+      <div class="subtitle">NEON RETRO ARCADE 2026</div>
+    </header>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-card">
+        <span class="label">SCORE</span>
+        <span id="score" class="value glow-cyan">0</span>
+      </div>
+      <div class="score-card">
+        <span class="label">HIGH SCORE</span>
+        <span id="high-score" class="value glow-pink">0</span>
+      </div>
+      <div class="score-card">
+        <span class="label">LEVEL</span>
+        <span id="level" class="value glow-yellow">1</span>
+      </div>
+      <div class="score-card">
+        <span class="label">SPEED</span>
+        <span id="speed-meter" class="value glow-green">1x</span>
+      </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="480" height="480"></canvas>
+      <div class="crt-overlay"></div>
+
+      <!-- Start / Pause / Game Over Overlay -->
+      <div id="overlay" class="overlay active">
+        <div class="overlay-card">
+          <h2 id="overlay-title" class="glitch-text glow-pink">READY PLAYER ONE</h2>
+          <p id="overlay-subtitle" class="overlay-msg">Control the cyber-viper. Eat energy cores.</p>
+          
+          <div class="difficulty-select">
+            <span class="diff-label">DIFFICULTY:</span>
+            <div class="diff-buttons">
+              <button class="diff-btn" data-speed="140">EASY</button>
+              <button class="diff-btn active" data-speed="100">MEDIUM</button>
+              <button class="diff-btn" data-speed="70">HARD</button>
+              <button class="diff-btn" data-speed="45">INSANE</button>
+            </div>
+          </div>
+
+          <button id="start-btn" class="arcade-btn pulse-glow">START GAME [SPACE]</button>
+          
+          <div class="instructions">
+            <span>⌨ WASD or Arrow Keys to Move</span>
+            <span>📱 Touch / D-Pad for Mobile</span>
+            <span>⏸ SPACE to Pause</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio & Options bar -->
+    <div class="controls-bar">
+      <button id="btn-sound" class="icon-btn" title="Toggle Sound">🔊 SOUND: ON</button>
+      <button id="btn-music" class="icon-btn" title="Toggle Synth Music">🎵 MUSIC: OFF</button>
+      <button id="btn-crt" class="icon-btn" title="Toggle Scanlines">📺 CRT FX: ON</button>
+      <button id="btn-pause" class="icon-btn" title="Pause Game">⏸ PAUSE</button>
+    </div>
+
+    <!-- Virtual D-Pad for Mobile & Onscreen Control -->
+    <div class="virtual-controls">
+      <div class="dpad-grid">
+        <button id="btn-up" class="dpad-btn up" aria-label="Up">▲</button>
+        <button id="btn-left" class="dpad-btn left" aria-label="Left">◀</button>
+        <div class="dpad-center"></div>
+        <button id="btn-right" class="dpad-btn right" aria-label="Right">▶</button>
+        <button id="btn-down" class="dpad-btn down" aria-label="Down">▼</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="game-footer">
+      <span>Built with Canvas & Web Audio API</span>
+      <span class="divider">|</span>
+      <span>Vercel + GitHub Ready</span>
+    </footer>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
